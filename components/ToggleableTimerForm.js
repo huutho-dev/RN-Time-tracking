@@ -1,13 +1,21 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import TimeForm from './TimerForm';
+import TimeButton from './TimerButton';
 
-export default class ToggleableTimerForm extends Component {
-  constructor(props) {
-    super(props);
-    const { isOpen } = this.props;
-  }
-
-  render() {
-    return <View />;
-  }
+export default function ToggleableTimeForm({ isOpen }) {
+  return (
+    <View style={[styles.container, !isOpen && styles.buttonPadding]}>
+      {isOpen ? <TimeForm /> : <TimeButton color="black" title="+" />}
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    paddingVertical: 10,
+  },
+  buttonPadding: {
+    paddingHorizontal: 15,
+  },
+});

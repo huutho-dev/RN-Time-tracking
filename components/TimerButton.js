@@ -7,7 +7,7 @@ export default function TimmerButton({ small, color, title, onPress }) {
       style={[styles.button, { borderColor: color }]}
       onPress={onPress}
     >
-      <Text  
+      <Text
         style={
           ([styles.buttonText, small ? styles.small : styles.large],
           { color: color })
@@ -21,8 +21,10 @@ export default function TimmerButton({ small, color, title, onPress }) {
 
 const styles = StyleSheet.create({
   button: {
+    alignItems: 'center',
     marginTop: 10,
     minWidth: 100,
+    padding: 8,
     borderWidth: 2,
     borderRadius: 3,
   },
@@ -35,17 +37,17 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   large: {
-    fontSize : 16
-    padding : 10
+    fontSize: 16,
+    padding: 10,
   },
-  title : {
-      fontSize : 14,
-      fontWeight : 'bold'
-  }
-  elapsedTime : {
-      fontSize : 18 ,
+  title: {
+    fontSize: 14,
     fontWeight: 'bold',
-    textAlign:'center',
-    paddingVertical : 10
-  }
+  },
+  elapsedTime: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    paddingVertical: 10,
+  },
 });
